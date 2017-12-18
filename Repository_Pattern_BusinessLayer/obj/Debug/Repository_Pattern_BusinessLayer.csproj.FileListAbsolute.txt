@@ -1,0 +1,5 @@
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_Pattern_BusinessLayer\bin\Debug\Repository_Pattern_BusinessLayer.dll
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_Pattern_BusinessLayer\bin\Debug\Repository_Pattern_BusinessLayer.pdb
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_Pattern_BusinessLayer\obj\Debug\Repository_Pattern_BusinessLayer.csprojResolveAssemblyReference.cache
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_Pattern_BusinessLayer\obj\Debug\Repository_Pattern_BusinessLayer.dll
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_Pattern_BusinessLayer\obj\Debug\Repository_Pattern_BusinessLayer.pdb

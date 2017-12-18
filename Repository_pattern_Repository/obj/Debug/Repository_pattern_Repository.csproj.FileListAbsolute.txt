@@ -1,0 +1,13 @@
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\obj\Debug\Repository_pattern_Repository.csprojResolveAssemblyReference.cache
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\bin\Debug\Repository_pattern_Repository.dll
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\bin\Debug\Repository_pattern_Repository.pdb
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\obj\Debug\Repository_pattern_Repository.dll
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\obj\Debug\Repository_pattern_Repository.pdb
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\bin\Debug\Repository_Pattern_DataLayer.dll
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\bin\Debug\EntityFramework.dll
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\bin\Debug\Repository_Pattern_DataLayer.pdb
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\bin\Debug\EntityFramework.xml
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\bin\Debug\Repository_pattern_Repository.dll.config
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\bin\Debug\Repository_pattern_Models.dll
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\bin\Debug\Repository_pattern_Models.pdb
+c:\users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\obj\Debug\Repository_pattern_Repository.csproj.ResolveComReference.cache

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RepositoryPattern_DBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="RepositoryPattern_DBModelStoreContainer">
+    <EntitySet Name="tbl_Employee" EntityType="RepositoryPattern_DBModel.Store.tbl_Employee" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="tbl_Employee">
+    <Key>
+      <PropertyRef Name="EmpId" />
+    </Key>
+    <Property Name="EmpId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EmpName" Type="nvarchar(max)" />
+    <Property Name="EmdDesignation" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmpGrade" Type="char" MaxLength="1" />
+  </EntityType>
+</Schema>

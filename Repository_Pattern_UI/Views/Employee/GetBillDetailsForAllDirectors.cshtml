@@ -1,0 +1,45 @@
+﻿@using Repository_pattern_Models
+@model IEnumerable<UserBillSummaryModel>
+
+@{
+    ViewBag.Title = "GetBillDetailsForAllDirectors";
+}
+
+<h2>GetBillDetailsForAllDirectors</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillToBePaidByEmployee)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillToBePaidByEmployee)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.EmpGrade)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+</table>
