@@ -11,3 +11,4 @@ C:\Users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Reposito
 C:\Users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\obj\Debug\Repository_pattern_Repository.csproj.ResolveComReference.cache
 C:\Users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\obj\Debug\Repository_pattern_Repository.dll
 C:\Users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\obj\Debug\Repository_pattern_Repository.pdb
+C:\Users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_pattern_Repository\bin\Debug\Excel.dll

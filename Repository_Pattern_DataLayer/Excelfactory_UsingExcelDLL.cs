@@ -12,9 +12,16 @@ namespace Repository_Pattern_DataLayer
     public class Excelfactory_UsingExcelDLL : IExcelFactory
     {
 
-        public T GetExcelData<T>()
+        public T GetExcelData<T>(string filepath)
         {
-            throw new NotImplementedException();
+            foreach (var worksheet in Workbook.Worksheets(@"C:\Users\saika\Documents\Visual Studio 2012\Projects\Repository_Pattern\Data Source\Bill_data_summary.xlsx"))
+            {
+                foreach (var row in worksheet.Rows){
+                       foreach (var cell in row.Cells){
+                        }
+                }
+            }
+            return (T)(new object());
         }
 
         public bool AddExcelData()

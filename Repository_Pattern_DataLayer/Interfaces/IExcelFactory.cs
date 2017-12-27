@@ -8,7 +8,7 @@ namespace Repository_Pattern_DataLayer.Interfaces
 {
     public interface IExcelFactory
     {
-        T GetExcelData<T>();
+        T GetExcelData<T>(string filepath);
         bool AddExcelData();
         bool RemoveExcelData();
     }

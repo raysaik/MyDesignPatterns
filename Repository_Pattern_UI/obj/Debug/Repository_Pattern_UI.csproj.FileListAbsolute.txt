@@ -28,3 +28,4 @@ C:\Users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Reposito
 C:\Users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_Pattern_UI\obj\Debug\Repository_Pattern_UI.csprojResolveAssemblyReference.cache
 C:\Users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_Pattern_UI\obj\Debug\Repository_Pattern_UI.dll
 C:\Users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_Pattern_UI\obj\Debug\Repository_Pattern_UI.pdb
+C:\Users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_Pattern_UI\bin\Excel.dll
