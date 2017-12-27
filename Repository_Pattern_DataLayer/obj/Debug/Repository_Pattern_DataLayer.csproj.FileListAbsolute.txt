@@ -8,3 +8,13 @@ C:\Users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Reposito
 C:\Users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_Pattern_DataLayer\obj\Debug\Repository_Pattern_DataLayer.dll
 C:\Users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_Pattern_DataLayer\obj\Debug\Repository_Pattern_DataLayer.pdb
 C:\Users\saika\documents\visual studio 2012\Projects\Repository_Pattern\Repository_Pattern_DataLayer\bin\Debug\Excel.dll
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_DataLayer\bin\Debug\Repository_Pattern_DataLayer.dll.config
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_DataLayer\bin\Debug\Repository_Pattern_DataLayer.dll
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_DataLayer\bin\Debug\Repository_Pattern_DataLayer.pdb
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_DataLayer\bin\Debug\EntityFramework.dll
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_DataLayer\bin\Debug\Excel.dll
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_DataLayer\bin\Debug\EntityFramework.xml
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_DataLayer\obj\Debug\Repository_Pattern_DataLayer.csprojResolveAssemblyReference.cache
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_DataLayer\obj\Debug\Repository_Pattern_DataLayer.csproj.ResolveComReference.cache
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_DataLayer\obj\Debug\Repository_Pattern_DataLayer.dll
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_DataLayer\obj\Debug\Repository_Pattern_DataLayer.pdb

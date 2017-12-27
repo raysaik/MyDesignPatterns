@@ -11,17 +11,22 @@ namespace Repository_Pattern_DataLayer
 
     public class Excelfactory_UsingExcelDLL : IExcelFactory
     {
-
-        public T GetExcelData<T>(string filepath)
+        //This factory has a limitation that it cannot pick a sheet from a spreadsheet using a sheet name
+       // public IExcelProduct ConcreteEzxcelWorkbook
+        public IExcelProduct GetExcelData<T>(string filepath)
         {
-            foreach (var worksheet in Workbook.Worksheets(@"C:\Users\saika\Documents\Visual Studio 2012\Projects\Repository_Pattern\Data Source\Bill_data_summary.xlsx"))
-            {
-                foreach (var row in worksheet.Rows){
-                       foreach (var cell in row.Cells){
-                        }
-                }
-            }
-            return (T)(new object());
+            var worksheet = Workbook.Worksheets(filepath).FirstOrDefault();
+
+            //foreach (var worksheet in Workbook.Worksheets(@"C:\Saikat\RepositoryPattern\MyDesignPatterns\Data Source\Bill_data_summary.xlsx"))
+            //{
+            //    foreach (var row in worksheet.Rows){
+            //           foreach (var cell in row.Cells){
+
+            //            }
+            //    }
+            //}
+            //Excel
+            return worksheet;
         }
 
         public bool AddExcelData()

@@ -25,8 +25,10 @@ namespace Repository_pattern_Repository
         {
 
             List<Model.UserBillSummaryModel> userBillModels = new List<Model.UserBillSummaryModel>();
+            eu.GetExcelData();
             var employeesByGivenDesignation = db.tbl_Employee.Where(emp => emp.EmdDesignation.Equals(Designation)).ToList();
-            IList<Model.BillModel> billModelList = GetAllBills(eu.GetExcelData());
+            
+            IList<Model.BillModel> billModelList = null;
             foreach(var employee in employeesByGivenDesignation)
             {
                 double totalBill = 0;

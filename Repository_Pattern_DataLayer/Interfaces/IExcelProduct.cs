@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Repository_Pattern_DataLayer.Interfaces
 {
-    public interface IExcelFactory
+    public interface IExcelProduct
     {
-        IExcelProduct GetExcelData(string filepath);
-        bool AddExcelData();
-        bool RemoveExcelData();
-
-     }
+    }
 }
