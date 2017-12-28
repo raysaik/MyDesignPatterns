@@ -32,7 +32,7 @@ namespace Repository_Pattern_UI.Controllers
 
         public ActionResult GetBillDetailsForAllDirectors()
         {
-           IEnumerable<ViewModel.UserBillSummaryModel> ubsModel =  billRepository.GetEmployeeBillDetailsByDesignation("Director");
+            IEnumerable<ViewModel.UserBillSummaryModel> ubsModel = billRepository.GetEmployeeBillDetailsByDesignation("Technitian");
            return View(ubsModel);
         }
 
