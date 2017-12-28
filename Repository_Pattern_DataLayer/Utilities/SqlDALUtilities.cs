@@ -14,6 +14,11 @@ namespace Repository_Pattern_DataLayer
             db = new RepositoryPattern_DBEntities();
         }
 
+        public List<tbl_Employee> GetAllEmployeeDetails()
+        {
+            return db.tbl_Employee.ToList();
+        }
+
         public List<tbl_Employee> GetEmployeeDetailsByDesignation(string Designation)
         {
             return db.tbl_Employee.Where(emp => emp.EmdDesignation.Equals(Designation)).ToList();

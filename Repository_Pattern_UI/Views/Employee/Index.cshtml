@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Repository_pattern_Models.UserBillSummaryModel>
+
+<h2>@ViewBag.Title</h2>
+<div class="container table-bordered">
+    <div class="row mark">
+        <div class="col-md-3">
+            @Html.DisplayNameFor(model => model.EmpName)
+        </div>
+        <div class="col-md-3">
+            @Html.DisplayNameFor(model => model.EmpDesignation)
+        </div>
+        <div class="col-md-3">
+            @Html.DisplayNameFor(model => model.BillAmount)
+        </div>
+        <div class="col-md-3">
+            @Html.DisplayNameFor(model => model.BillToBePaidByEmployee)
+        </div>
+    </div>
+    <div class='clearfix'></div>
+    <div class="row mark">
+        <div class="col-md-3">
+            <input type="text" />
+        </div>
+        <div class="col-md-3">
+            <!--This list will come from the SQL database!-->
+            <select>
+                <option value="0">A</option>
+                <option value="1">B</option>
+                <option value="2">C</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <select>
+                <option value="0"></option>
+                <option value="1">Amount--High to Low</option>
+                <option value="2">Amount--Low to High</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <select>
+                <option value="0"></option>
+                <option value="1">Amount--High to Low</option>
+                <option value="2">Amount--Low to High</option>
+            </select>
+        </div>
+    </div>
+    <div class='clearfix'></div>
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-md-3">
+                @Html.DisplayFor(modelItem => item.EmpName)
+            </div>
+            <div class="col-md-3">
+                @Html.DisplayFor(modelItem => item.EmpDesignation)
+            </div>
+            <div class="col-md-3">
+                @Html.DisplayFor(modelItem => item.BillAmount)
+            </div>
+            <div class="col-md-3">
+                @Html.DisplayFor(modelItem => item.BillToBePaidByEmployee)
+            </div>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.EmpGrade)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+        </div>
+    }
+
+</div>

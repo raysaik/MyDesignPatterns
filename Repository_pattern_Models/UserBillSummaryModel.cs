@@ -12,8 +12,7 @@ namespace Repository_pattern_Models
         private string _empName;
         private double _billAmount;
         private double _billToBePaidByEmployee;
-
-        
+        private string _empDesignation;
 
         [Display(Name="Total Bill",Description="Amount billed by Oil provider")]
         public double BillAmount
@@ -35,6 +34,13 @@ namespace Repository_pattern_Models
         {
             get { return _billToBePaidByEmployee; }
             set { _billToBePaidByEmployee = value; }
+        }
+
+        [Display(Name = "Designation")]
+        public string EmpDesignation
+        {
+            get { return _empDesignation; }
+            set { _empDesignation = value; }
         }
     }
 }

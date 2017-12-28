@@ -19,48 +19,43 @@ namespace Repository_pattern_Repository
             eu = new DAL.ExcelUtilities();
             su = new DAL.SqlDALUtilities();
         }
-        
+
+
+
+        public List<Model.UserBillSummaryModel> GetAllEmployeeBillDetails()
+        {
+            List<Model.UserBillSummaryModel> userBillModels = new List<Model.UserBillSummaryModel>();
+            var employeesByGivenDesignation = su.GetAllEmployeeDetails();
+            IList<Model.BillModel> billModelList = GetRawBill(eu.GetExcelData());
+            GenerateBillModel(billModelList, employeesByGivenDesignation, userBillModels);
+            return userBillModels;
+        }
+
         public List<Model.UserBillSummaryModel> GetEmployeeBillDetailsByDesignation(string Designation)
         {
 
             List<Model.UserBillSummaryModel> userBillModels = new List<Model.UserBillSummaryModel>();
             var employeesByGivenDesignation = su.GetEmployeeDetailsByDesignation(Designation);
             IList<Model.BillModel> billModelList = GetRawBill(eu.GetExcelData());
-            foreach(var employee in employeesByGivenDesignation)
+            GenerateBillModel(billModelList, employeesByGivenDesignation, userBillModels);
+            return userBillModels;
+        }
+
+        #region PRIVATE METHODS    
+    
+        private void GenerateBillModel(IList<Model.BillModel> billModelFromExcel, List<DAL.tbl_Employee> empListFromDB, List<Model.UserBillSummaryModel> userBillModels)
+        {
+            foreach (var employee in empListFromDB)
             {
                 double totalBill = 0;
-                var billData = billModelList.Where(bill=>bill.BillFor.Equals(employee.EmpName)).ToList();
+                var billData = billModelFromExcel.Where(bill => bill.BillFor.Equals(employee.EmpName)).ToList();
                 foreach (var bill in billData)
                 {
                     totalBill += bill.Amount;
                 }
-                userBillModels.Add(new Model.UserBillSummaryModel() { EmpName = employee.EmpName,BillAmount = totalBill });
+                userBillModels.Add(new Model.UserBillSummaryModel() { EmpName = employee.EmpName, BillAmount = totalBill });
             }
-
-
-            return userBillModels;
         }
-
-        #region PRIVATE METHODS
-        //private IList<Model.BillModel> GetAllBills(Excel.Range range)
-        //{
-        //    IList<Model.BillModel> billList = new List<Model.BillModel>();
-        //    Model.BillModel myBillSummary;
-        //    int rows = range.Rows.Count;
-        //    int columns = range.Columns.Count;
-        //    for (int rCnt = 1; rCnt <= rows; rCnt++)
-        //    {
-        //        myBillSummary = new Model.BillModel()
-        //        {
-        //            BillID = (string)(range.Cells[rCnt, 0] as Excel.Range).Value,
-        //            BillFor = (string)(range.Cells[rCnt, 1] as Excel.Range).Value,
-        //            Amount = (double)(range.Cells[rCnt, 1] as Excel.Range).Value,
-        //            PaidBy = (string)(range.Cells[rCnt, 3] as Excel.Range).Value
-        //        };
-        //        billList.Add(myBillSummary);
-        //    }
-        //    return billList;
-        //}
 
         private IList<Model.BillModel> GetRawBill(DALInterfaces.IExcelProduct excelOutput)
         {
