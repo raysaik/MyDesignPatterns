@@ -53,8 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Excelfactory_UsingExcelDLL.cs" />
-    <Compile Include="ExcelUtilities.cs" />
+    <Compile Include="BillDALClass.cs" />
+    <Compile Include="ConcreteProduct\ExcelDll_Product.cs" />
+    <Compile Include="ConcreteFactory\Excelfactory_UsingExcelDLL.cs" />
+    <Compile Include="Utilities\ExcelUtilities.cs" />
     <Compile Include="Interfaces\IExcelFactory.cs" />
     <Compile Include="Interfaces\IExcelProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +75,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Repository_pattern_DB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\SqlDALUtilities.cs" />
     <Compile Include="tbl_Employee.cs">
       <DependentUpon>Repository_pattern_DB.tt</DependentUpon>
     </Compile>
@@ -127,9 +130,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ConcreteProduct\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

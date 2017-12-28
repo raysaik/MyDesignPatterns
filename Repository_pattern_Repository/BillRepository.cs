@@ -5,30 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL = Repository_Pattern_DataLayer;
 using Model = Repository_pattern_Models;
-using Excel = Microsoft.Office.Interop.Excel;
+using DALInterfaces = Repository_Pattern_DataLayer.Interfaces;
 
 namespace Repository_pattern_Repository
 {
     public class BillRepository
     {
-        private DAL.RepositoryPattern_DBEntities db;
+        
+        private DAL.SqlDALUtilities su;
         private DAL.ExcelUtilities eu;
         public BillRepository()
         {
-            db = new DAL.RepositoryPattern_DBEntities();
             eu = new DAL.ExcelUtilities();
+            su = new DAL.SqlDALUtilities();
         }
-
-
         
         public List<Model.UserBillSummaryModel> GetEmployeeBillDetailsByDesignation(string Designation)
         {
 
             List<Model.UserBillSummaryModel> userBillModels = new List<Model.UserBillSummaryModel>();
-            eu.GetExcelData();
-            var employeesByGivenDesignation = db.tbl_Employee.Where(emp => emp.EmdDesignation.Equals(Designation)).ToList();
-            
-            IList<Model.BillModel> billModelList = null;
+            var employeesByGivenDesignation = su.GetEmployeeDetailsByDesignation(Designation);
+            IList<Model.BillModel> billModelList = GetRawBill(eu.GetExcelData());
             foreach(var employee in employeesByGivenDesignation)
             {
                 double totalBill = 0;
@@ -44,24 +41,45 @@ namespace Repository_pattern_Repository
             return userBillModels;
         }
 
-        private IList<Model.BillModel> GetAllBills(Excel.Range range)
+        #region PRIVATE METHODS
+        //private IList<Model.BillModel> GetAllBills(Excel.Range range)
+        //{
+        //    IList<Model.BillModel> billList = new List<Model.BillModel>();
+        //    Model.BillModel myBillSummary;
+        //    int rows = range.Rows.Count;
+        //    int columns = range.Columns.Count;
+        //    for (int rCnt = 1; rCnt <= rows; rCnt++)
+        //    {
+        //        myBillSummary = new Model.BillModel()
+        //        {
+        //            BillID = (string)(range.Cells[rCnt, 0] as Excel.Range).Value,
+        //            BillFor = (string)(range.Cells[rCnt, 1] as Excel.Range).Value,
+        //            Amount = (double)(range.Cells[rCnt, 1] as Excel.Range).Value,
+        //            PaidBy = (string)(range.Cells[rCnt, 3] as Excel.Range).Value
+        //        };
+        //        billList.Add(myBillSummary);
+        //    }
+        //    return billList;
+        //}
+
+        private IList<Model.BillModel> GetRawBill(DALInterfaces.IExcelProduct excelOutput)
         {
             IList<Model.BillModel> billList = new List<Model.BillModel>();
-            Model.BillModel myBillSummary;
-            int rows = range.Rows.Count;
-            int columns = range.Columns.Count;
-            for (int rCnt = 1; rCnt <= rows; rCnt++)
+            Model.BillModel billModel = null;
+            foreach (var item in excelOutput.billList)
             {
-                myBillSummary = new Model.BillModel()
+                billModel = new Model.BillModel()
                 {
-                    BillID = (string)(range.Cells[rCnt, 0] as Excel.Range).Value,
-                    BillFor = (string)(range.Cells[rCnt, 1] as Excel.Range).Value,
-                    Amount = (double)(range.Cells[rCnt, 1] as Excel.Range).Value,
-                    PaidBy = (string)(range.Cells[rCnt, 3] as Excel.Range).Value
+                    BillID = item.BillID,
+                    BillFor = item.BillFor,
+                    Amount = item.Amount,
+                    PaidBy = item.PaidBy
                 };
-                billList.Add(myBillSummary);
+                billList.Add(billModel);
             }
+           
             return billList;
         }
+        #endregion
     }
 }

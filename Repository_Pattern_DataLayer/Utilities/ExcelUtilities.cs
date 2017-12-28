@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExcelInterop = Microsoft.Office.Interop.Excel; 
+using ExcelInterop = Microsoft.Office.Interop.Excel;
+using System.Configuration;
 
 namespace Repository_Pattern_DataLayer
 {
@@ -24,9 +25,9 @@ namespace Repository_Pattern_DataLayer
             excelFactory = new Excelfactory_UsingExcelDLL();
 	    }
 
-        public object GetExcelData()
+        public IExcelProduct GetExcelData()
         {
-           return excelFactory.GetExcelData("C:\\Saikat\\RepositoryPattern\\MyDesignPatterns\\Data Source\\Bill_data_summary.xlsx");
+            return excelFactory.GetExcelData(ConfigurationManager.AppSettings["ExcelFilePath"].ToString());
         }
 
 
