@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DAL = Repository_Pattern_DataLayer;
 using Model = Repository_pattern_Models;
 using DALInterfaces = Repository_Pattern_DataLayer.Interfaces;
+using BAL = Repository_Pattern_BusinessLayer;
 
 namespace Repository_pattern_Repository
 {
@@ -14,20 +15,21 @@ namespace Repository_pattern_Repository
         
         private DAL.SqlDALUtilities su;
         private DAL.ExcelUtilities eu;
+        private IList<BAL.IRule> allRules;
         public BillRepository()
         {
             eu = new DAL.ExcelUtilities();
             su = new DAL.SqlDALUtilities();
+            allRules = BAL.RuleHelpers.InitializeRuleEngine();
         }
-
-
 
         public List<Model.UserBillSummaryModel> GetAllEmployeeBillDetails()
         {
             List<Model.UserBillSummaryModel> userBillModels = new List<Model.UserBillSummaryModel>();
             var employeesByGivenDesignation = su.GetAllEmployeeDetails();
             IList<Model.BillModel> billModelList = GetRawBill(eu.GetExcelData());
-            GenerateBillModel(billModelList, employeesByGivenDesignation, userBillModels);
+            GenerateBillModel(billModelList, employeesByGivenDesignation, userBillModels,allRules);
+
             return userBillModels;
         }
 
@@ -37,23 +39,27 @@ namespace Repository_pattern_Repository
             List<Model.UserBillSummaryModel> userBillModels = new List<Model.UserBillSummaryModel>();
             var employeesByGivenDesignation = su.GetEmployeeDetailsByDesignation(Designation);
             IList<Model.BillModel> billModelList = GetRawBill(eu.GetExcelData());
-            GenerateBillModel(billModelList, employeesByGivenDesignation, userBillModels);
+            GenerateBillModel(billModelList, employeesByGivenDesignation, userBillModels, allRules);
             return userBillModels;
         }
 
         #region PRIVATE METHODS    
     
-        private void GenerateBillModel(IList<Model.BillModel> billModelFromExcel, List<DAL.tbl_Employee> empListFromDB, List<Model.UserBillSummaryModel> userBillModels)
+        private void GenerateBillModel(IList<Model.BillModel> billModelFromExcel, List<DAL.tbl_Employee> empListFromDB,
+            List<Model.UserBillSummaryModel> userBillModels, IList<BAL.IRule> AllRules)
         {
             foreach (var employee in empListFromDB)
             {
-                double totalBill = 0;
+                double totalBill = 0; double amountTobePaid = 0;
                 var billData = billModelFromExcel.Where(bill => bill.BillFor.Equals(employee.EmpName)).ToList();
                 foreach (var bill in billData)
                 {
                     totalBill += bill.Amount;
                 }
-                userBillModels.Add(new Model.UserBillSummaryModel() { EmpName = employee.EmpName, BillAmount = totalBill });
+                amountTobePaid = totalBill;
+                ExecuteBusinessRules(AllRules,employee.EmpGrade, ref amountTobePaid);
+                userBillModels.Add(new Model.UserBillSummaryModel() { EmpName = employee.EmpName, BillAmount = totalBill , 
+                    BillToBePaidByEmployee = amountTobePaid, EmpDesignation = employee.EmdDesignation });
             }
         }
 
@@ -74,6 +80,14 @@ namespace Repository_pattern_Repository
             }
            
             return billList;
+        }
+
+        private void ExecuteBusinessRules(IList<BAL.IRule> AllRules,string Grade, ref double Amount)
+        {
+            foreach (var rule in AllRules)
+            {
+                Amount = rule.RuleImplementation(Grade, Amount);
+            }
         }
         #endregion
     }

@@ -11,10 +11,10 @@ namespace Repository_Pattern_DataLayer
 {
     public class ExcelUtilities
     {
-        ExcelInterop.Application xlApp;
-        ExcelInterop.Workbook xlWorkBook;
-        ExcelInterop.Worksheet xlWorkSheet;
-        ExcelInterop.Range range;
+        //ExcelInterop.Application xlApp;
+        //ExcelInterop.Workbook xlWorkBook;
+        //ExcelInterop.Worksheet xlWorkSheet;
+        //ExcelInterop.Range range;
         IExcelFactory excelFactory;
         public ExcelUtilities ()
 	    {

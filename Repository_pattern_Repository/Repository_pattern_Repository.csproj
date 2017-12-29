@@ -51,6 +51,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Repository_Pattern_BusinessLayer\Repository_Pattern_BusinessLayer.csproj">
+      <Project>{8c99ec4b-8687-429a-88a4-51ef139a1d1f}</Project>
+      <Name>Repository_Pattern_BusinessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Repository_Pattern_DataLayer\Repository_Pattern_DataLayer.csproj">
       <Project>{ae27e02d-ab34-4233-bf9f-a7ca54044956}</Project>
       <Name>Repository_Pattern_DataLayer</Name>

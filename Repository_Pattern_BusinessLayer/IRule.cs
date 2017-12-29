@@ -8,6 +8,8 @@ namespace Repository_Pattern_BusinessLayer
 {
     public interface IRule
     {
-        double GetBill(char grade, double amount);
+        string RuleName { get; }
+        string RuleDescription { get;}
+        double RuleImplementation(params dynamic[] param1);
     }
 }
