@@ -50,14 +50,16 @@ namespace Repository_pattern_Repository
         {
             foreach (var employee in empListFromDB)
             {
-                double totalBill = 0; double amountTobePaid = 0;
+                double totalBill = 0; double amountTobePaid = 0; double _amountPaidInCash = 0;
                 var billData = billModelFromExcel.Where(bill => bill.BillFor.Equals(employee.EmpName)).ToList();
                 foreach (var bill in billData)
                 {
+                    if (bill.PaidBy.Equals("Cash"))
+                        _amountPaidInCash += bill.Amount;
                     totalBill += bill.Amount;
                 }
                 amountTobePaid = totalBill;
-                ExecuteBusinessRules(AllRules,employee.EmpGrade, ref amountTobePaid);
+                ExecuteBusinessRules(AllRules,employee.EmpGrade,employee.EmdDesignation,_amountPaidInCash, ref amountTobePaid);
                 userBillModels.Add(new Model.UserBillSummaryModel() { EmpName = employee.EmpName, BillAmount = totalBill , 
                     BillToBePaidByEmployee = amountTobePaid, EmpDesignation = employee.EmdDesignation });
             }
@@ -82,11 +84,11 @@ namespace Repository_pattern_Repository
             return billList;
         }
 
-        private void ExecuteBusinessRules(IList<BAL.IRule> AllRules,string Grade, ref double Amount)
+        private void ExecuteBusinessRules(IList<BAL.IRule> AllRules,string Grade, string Designation, double AmountPaidInCash, ref double Amount)
         {
             foreach (var rule in AllRules)
             {
-                Amount = rule.RuleImplementation(Grade, Amount);
+                Amount = rule.RuleImplementation(Grade, Amount, Designation, AmountPaidInCash);
             }
         }
         #endregion
