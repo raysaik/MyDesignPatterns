@@ -26,5 +26,6 @@ namespace Repository_Pattern_DataLayer
         }
     
         public DbSet<tbl_Employee> tbl_Employee { get; set; }
+        public DbSet<tbl_Designations> tbl_Designations { get; set; }
     }
 }

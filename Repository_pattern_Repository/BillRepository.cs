@@ -10,7 +10,7 @@ using BAL = Repository_Pattern_BusinessLayer;
 
 namespace Repository_pattern_Repository
 {
-    public class BillRepository
+    public class BillRepository : IBillRepository
     {
         
         private DAL.SqlDALUtilities su;
@@ -43,8 +43,13 @@ namespace Repository_pattern_Repository
             return userBillModels;
         }
 
+        public List<string> GetAllEmployeeDesignations()
+        {
+            return su.GetAllEmployeeDesignationsFromDB();
+        }
+
         #region PRIVATE METHODS    
-    
+
         private void GenerateBillModel(IList<Model.BillModel> billModelFromExcel, List<DAL.tbl_Employee> empListFromDB,
             List<Model.UserBillSummaryModel> userBillModels, IList<BAL.IRule> AllRules)
         {
@@ -90,7 +95,7 @@ namespace Repository_pattern_Repository
             {
                 Amount = rule.RuleImplementation(Grade, Amount, Designation, AmountPaidInCash);
             }
-        }
+        }       
         #endregion
     }
 }

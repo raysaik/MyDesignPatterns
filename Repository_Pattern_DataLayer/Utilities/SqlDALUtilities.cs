@@ -23,5 +23,12 @@ namespace Repository_Pattern_DataLayer
         {
             return db.tbl_Employee.Where(emp => emp.EmdDesignation.Equals(Designation)).ToList();
         }
+
+        public List<string> GetAllEmployeeDesignationsFromDB()
+        {
+            var empDesgs = (from desg in db.tbl_Designations
+                        select desg.EmployeeDesignation).Distinct().ToList();
+            return empDesgs;
+        }
     }
 }

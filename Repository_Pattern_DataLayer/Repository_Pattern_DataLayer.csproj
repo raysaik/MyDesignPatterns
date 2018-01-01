@@ -56,6 +56,9 @@
     <Compile Include="BillDALClass.cs" />
     <Compile Include="ConcreteProduct\ExcelDll_Product.cs" />
     <Compile Include="ConcreteFactory\Excelfactory_UsingExcelDLL.cs" />
+    <Compile Include="tbl_Designations.cs">
+      <DependentUpon>Repository_pattern_DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\ExcelUtilities.cs" />
     <Compile Include="Interfaces\IExcelFactory.cs" />
     <Compile Include="Interfaces\IExcelProduct.cs" />

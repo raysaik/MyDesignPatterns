@@ -1,0 +1,6 @@
+C:\Users\saika\Documents\Visual Studio 2012\Projects\Repository_Pattern\Repository_pattern_Models\bin\Debug\Repository_pattern_Models.dll
+C:\Users\saika\Documents\Visual Studio 2012\Projects\Repository_Pattern\Repository_pattern_Models\bin\Debug\Repository_pattern_Models.pdb
+C:\Users\saika\Documents\Visual Studio 2012\Projects\Repository_Pattern\Repository_pattern_Models\obj\Debug\Repository_pattern_Models.csprojResolveAssemblyReference.cache
+C:\Users\saika\Documents\Visual Studio 2012\Projects\Repository_Pattern\Repository_pattern_Models\obj\Debug\Repository_pattern_Models.csproj.CoreCompileInputs.cache
+C:\Users\saika\Documents\Visual Studio 2012\Projects\Repository_Pattern\Repository_pattern_Models\obj\Debug\Repository_pattern_Models.dll
+C:\Users\saika\Documents\Visual Studio 2012\Projects\Repository_Pattern\Repository_pattern_Models\obj\Debug\Repository_pattern_Models.pdb
