@@ -18,7 +18,7 @@ namespace Repository_Pattern_UI.Controllers
         //
         // GET: /Employee/
         private Repository.BillRepository billRepository;
-        private IEnumerable<ViewModel.UserBillSummaryModel> ubsModel = null;
+        //private IEnumerable<ViewModel.UserBillSummaryModel> ubsModel = null;
 
 
         public EmployeeController()
@@ -28,9 +28,10 @@ namespace Repository_Pattern_UI.Controllers
 
         public ActionResult Index()
         {
-            ubsModel = billRepository.GetAllEmployeeBillDetails();
+            HomePageViewModel viewModel = new HomePageViewModel();
+            viewModel.ubsModels = billRepository.GetAllEmployeeBillDetails();
             ViewBag.Title = "GetAllEmployeeBillDetails";
-            return View(ubsModel);
+            return View(viewModel);
            // return RedirectToAction("GetBillDetailsForAllDirectors");
         }
 

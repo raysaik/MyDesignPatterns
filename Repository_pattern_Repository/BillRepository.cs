@@ -29,7 +29,6 @@ namespace Repository_pattern_Repository
             var employeesByGivenDesignation = su.GetAllEmployeeDetails();
             IList<Model.BillModel> billModelList = GetRawBill(eu.GetExcelData());
             GenerateBillModel(billModelList, employeesByGivenDesignation, userBillModels,allRules);
-
             return userBillModels;
         }
 

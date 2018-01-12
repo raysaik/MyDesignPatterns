@@ -1,20 +1,25 @@
-﻿@model IEnumerable<Repository_pattern_Models.UserBillSummaryModel>
+﻿@model Repository_Pattern_UI.Models.HomePageViewModel
 
 <h2>@ViewBag.Title</h2>
 <div class="container table-bordered">
+
     <div class="row mark">
-        <div class="col-md-3">
-            @Html.DisplayNameFor(model => model.EmpName)
-        </div>
-        <div class="col-md-3">
-            @Html.DisplayNameFor(model => model.EmpDesignation)
-        </div>
-        <div class="col-md-3">
-            @Html.DisplayNameFor(model => model.BillAmount)
-        </div>
-        <div class="col-md-3">
-            @Html.DisplayNameFor(model => model.BillToBePaidByEmployee)
-        </div>
+        @foreach (var ubsModel in Model.ubsModels)
+        {
+            <div class="col-md-3">
+                @Html.DisplayNameFor(model => ubsModel.EmpName)
+            </div>
+            <div class="col-md-3">
+                @Html.DisplayNameFor(model => ubsModel.EmpDesignation)
+            </div>
+            <div class="col-md-3">
+                @Html.DisplayNameFor(model => ubsModel.BillAmount)
+            </div>
+            <div class="col-md-3">
+                @Html.DisplayNameFor(model => ubsModel.BillToBePaidByEmployee)
+            </div>
+            break;
+        }
     </div>
     <div class='clearfix'></div>
     <div class="row mark">
@@ -23,6 +28,7 @@
         </div>
         <div class="col-md-3">
             <!--This list will come from the SQL database!-->
+            @*@Html.DropDownListFor("Designations",model=>model.designations)*@
             <select>
                 <option value="0">A</option>
                 <option value="1">B</option>
@@ -45,7 +51,7 @@
         </div>
     </div>
     <div class='clearfix'></div>
-    @foreach (var item in Model)
+    @foreach (var item in Model.ubsModels)
     {
         <div class="row">
             <div class="col-md-3">
@@ -60,14 +66,6 @@
             <div class="col-md-3">
                 @Html.DisplayFor(modelItem => item.BillToBePaidByEmployee)
             </div>
-            @*<td>
-            @Html.DisplayFor(modelItem => item.EmpGrade)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>*@
         </div>
     }
 
