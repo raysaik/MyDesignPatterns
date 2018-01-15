@@ -36,7 +36,7 @@ namespace Repository_pattern_Repository
         {
 
             List<Model.UserBillSummaryModel> userBillModels = new List<Model.UserBillSummaryModel>();
-            var employeesByGivenDesignation = su.GetEmployeeDetailsByDesignation(Designation);
+            var employeesByGivenDesignation = string.IsNullOrEmpty(Designation) ? su.GetAllEmployeeDetails() :su.GetEmployeeDetailsByDesignation(Designation);
             IList<Model.BillModel> billModelList = GetRawBill(eu.GetExcelData());
             GenerateBillModel(billModelList, employeesByGivenDesignation, userBillModels, allRules);
             return userBillModels;

@@ -30,15 +30,31 @@ namespace Repository_Pattern_UI.Controllers
         {
             HomePageViewModel viewModel = new HomePageViewModel();
             viewModel.ubsModels = billRepository.GetAllEmployeeBillDetails();
+            var _allDesignations = billRepository.GetAllEmployeeDesignations();
+            foreach (string s in _allDesignations)
+            {
+                viewModel.ListOfDesignations.Add(new SelectListItem() { Text = s, Value = s });
+            }
             ViewBag.Title = "GetAllEmployeeBillDetails";
             return View(viewModel);
-           // return RedirectToAction("GetBillDetailsForAllDirectors");
         }
 
         public ActionResult GetBillDetailsForAllDirectors()
         {
            IEnumerable<ViewModel.UserBillSummaryModel> ubsModel = billRepository.GetEmployeeBillDetailsByDesignation("Technitian");
            return View(ubsModel);
+        }
+
+        public ActionResult FilterByDesgnation(HomePageViewModel viewModel)
+        {
+            viewModel.ubsModels = billRepository.GetEmployeeBillDetailsByDesignation(viewModel.selectedDesignation);
+            var _allDesignations = billRepository.GetAllEmployeeDesignations();
+            foreach (string s in _allDesignations)
+            {
+                viewModel.ListOfDesignations.Add(new SelectListItem() { Text = s, Value = s });
+            }
+            ViewBag.Title = string.Format("GetAll{0}'sBillDetails", viewModel.selectedDesignation);
+            return View("Index", viewModel);
         }
     }
 }

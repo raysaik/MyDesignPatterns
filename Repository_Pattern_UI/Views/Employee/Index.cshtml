@@ -27,13 +27,12 @@
             <input type="text" />
         </div>
         <div class="col-md-3">
-            <!--This list will come from the SQL database!-->
-            @*@Html.DropDownListFor("Designations",model=>model.designations)*@
-            <select>
-                <option value="0">A</option>
-                <option value="1">B</option>
-                <option value="2">C</option>
-            </select>
+            @using (Html.BeginForm("FilterByDesgnation", "Employee",FormMethod.Post))
+            {
+                <!--This list will come from the SQL database!-->
+                @Html.DropDownListFor(model => model.selectedDesignation, new SelectList(Model.ListOfDesignations, "Value", "Text"),
+             new { onchange = "this.form.submit();", id = "ddlDesignations" })
+            }
         </div>
         <div class="col-md-3">
             <select>
