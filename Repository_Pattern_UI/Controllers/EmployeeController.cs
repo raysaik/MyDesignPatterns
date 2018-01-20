@@ -56,5 +56,10 @@ namespace Repository_Pattern_UI.Controllers
             ViewBag.Title = string.Format("GetAll{0}'sBillDetails", viewModel.selectedDesignation);
             return View("Index", viewModel);
         }
+
+        public ActionResult TestAR()
+        {
+            return View("TestAR");
+        }
     }
 }
