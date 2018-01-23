@@ -1,0 +1,4 @@
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_BusinessLayer\bin\Debug\Repository_Pattern_BusinessLayer.dll
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_BusinessLayer\bin\Debug\Repository_Pattern_BusinessLayer.pdb
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_BusinessLayer\obj\Debug\Repository_Pattern_BusinessLayer.dll
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_BusinessLayer\obj\Debug\Repository_Pattern_BusinessLayer.pdb

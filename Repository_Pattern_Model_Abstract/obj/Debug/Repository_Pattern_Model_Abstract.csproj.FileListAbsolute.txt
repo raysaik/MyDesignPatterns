@@ -1,0 +1,17 @@
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\bin\Debug\Repository_Pattern_Model_Abstract.dll
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\bin\Debug\Repository_Pattern_Model_Abstract.pdb
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\bin\Debug\System.Web.Mvc.dll
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\bin\Debug\System.Web.Razor.dll
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\bin\Debug\System.Web.WebPages.dll
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\bin\Debug\System.Web.Mvc.xml
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\bin\Debug\System.Web.Razor.xml
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\bin\Debug\System.Web.WebPages.xml
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\bin\Debug\Microsoft.Web.Infrastructure.xml
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\obj\Debug\Repository_Pattern_Model_Abstract.csprojResolveAssemblyReference.cache
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\obj\Debug\Repository_Pattern_Model_Abstract.dll
+C:\Saikat\RepositoryPattern\MyDesignPatterns\Repository_Pattern_Model_Abstract\obj\Debug\Repository_Pattern_Model_Abstract.pdb

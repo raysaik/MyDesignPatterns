@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Repository_Pattern_Model_Abstract;
 
 namespace Repository_pattern_Models
 {
-    public class UserBillSummaryModel
+    public class UserBillSummaryModel : IUserBillSummaryModel
     {
         private string _empName;
         private double _billAmount;

@@ -109,6 +109,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Repository_Pattern_Model_Abstract\Repository_Pattern_Model_Abstract.csproj">
+      <Project>{e2bd56a6-4cee-495a-b2e9-ffc204903978}</Project>
+      <Name>Repository_Pattern_Model_Abstract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository_pattern_Repository\Repository_pattern_Repository.csproj">
+      <Project>{8ff67073-1a76-4da9-b640-bad8bce92f72}</Project>
+      <Name>Repository_pattern_Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Repository_Pattern_UI\Repository_Pattern_UI.csproj">
       <Project>{455D50DD-1B5F-4A10-AA24-68AD85E30431}</Project>
       <Name>Repository_Pattern_UI</Name>

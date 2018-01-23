@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Repository_Pattern_UI.Models;
 using Repository = Repository_pattern_Repository;
 using ViewModel = Repository_pattern_Models;
+using Repository_Pattern_Model_Abstract;
 
 namespace Repository_Pattern_UI.Controllers
 {
@@ -28,7 +29,7 @@ namespace Repository_Pattern_UI.Controllers
 
         public ActionResult Index()
         {
-            HomePageViewModel viewModel = new HomePageViewModel();
+            Abstract_ViewModel viewModel = new HomePageViewModel();
             viewModel.ubsModels = billRepository.GetAllEmployeeBillDetails();
             var _allDesignations = billRepository.GetAllEmployeeDesignations();
             foreach (string s in _allDesignations)
