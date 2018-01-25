@@ -31,20 +31,20 @@ namespace Repository_Pattern_UI.Tests
             Assert.AreEqual("TestAR", result.ViewName);
         }
 
-        public void IndexViewName_Test()
+        [Test]
+        public void Index_PageTitle_Test()
         {
             //Arrange
-            var controller = new EmployeeController();
-            //Repository.BillRepository billRepository = new Repository_pattern_Repository.BillRepository();
-            var testViewModel = MockRepository.GenerateStub<Abstract_ViewModel>();
-            testViewModel.ubsModels = MockRepository.GenerateStub<IEnumerable<IUserBillSummaryModel>>();
             var billRepoForMock = MockRepository.GenerateStub<Repository.IBillRepository>();
             billRepoForMock.Stub(m => m.GetAllEmployeeDesignations()).Return(new List<string>());
+            billRepoForMock.Stub(m => m.GetAllEmployeeBillDetails()).Return(new List<IUserBillSummaryModel>());
+            var controller = new EmployeeController(billRepoForMock);
+
             ////Act
-            //var result = controller.Index() as ViewResult;
+            var result = controller.Index() as ViewResult;
 
             ////Assert
-            //Assert.AreEqual("TestAR", result.ViewName);
+            Assert.AreEqual("GetAllEmployeeBillDetails", result.ViewBag.Title);
         }
     }
 }

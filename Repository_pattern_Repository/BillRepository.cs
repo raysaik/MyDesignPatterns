@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL = Repository_Pattern_DataLayer;
-using Model = Repository_pattern_Models;
+
 using DALInterfaces = Repository_Pattern_DataLayer.Interfaces;
 using BAL = Repository_Pattern_BusinessLayer;
+using Interfaces = Repository_Pattern_Model_Abstract;
+using Model = Repository_pattern_Models;
 
 namespace Repository_pattern_Repository
 {
@@ -23,19 +25,19 @@ namespace Repository_pattern_Repository
             allRules = BAL.RuleHelpers.InitializeRuleEngine();
         }
 
-        public List<Model.UserBillSummaryModel> GetAllEmployeeBillDetails()
+        public IList<Interfaces.IUserBillSummaryModel> GetAllEmployeeBillDetails()
         {
-            List<Model.UserBillSummaryModel> userBillModels = new List<Model.UserBillSummaryModel>();
+            List<Interfaces.IUserBillSummaryModel> userBillModels = new List<Interfaces.IUserBillSummaryModel>();
             var employeesByGivenDesignation = su.GetAllEmployeeDetails();
             IList<Model.BillModel> billModelList = GetRawBill(eu.GetExcelData());
             GenerateBillModel(billModelList, employeesByGivenDesignation, userBillModels,allRules);
             return userBillModels;
         }
 
-        public List<Model.UserBillSummaryModel> GetEmployeeBillDetailsByDesignation(string Designation)
+        public List<Interfaces.IUserBillSummaryModel> GetEmployeeBillDetailsByDesignation(string Designation)
         {
 
-            List<Model.UserBillSummaryModel> userBillModels = new List<Model.UserBillSummaryModel>();
+            List<Interfaces.IUserBillSummaryModel> userBillModels = new List<Interfaces.IUserBillSummaryModel>();
             var employeesByGivenDesignation = string.IsNullOrEmpty(Designation) ? su.GetAllEmployeeDetails() :su.GetEmployeeDetailsByDesignation(Designation);
             IList<Model.BillModel> billModelList = GetRawBill(eu.GetExcelData());
             GenerateBillModel(billModelList, employeesByGivenDesignation, userBillModels, allRules);
@@ -50,7 +52,7 @@ namespace Repository_pattern_Repository
         #region PRIVATE METHODS    
 
         private void GenerateBillModel(IList<Model.BillModel> billModelFromExcel, List<DAL.tbl_Employee> empListFromDB,
-            List<Model.UserBillSummaryModel> userBillModels, IList<BAL.IRule> AllRules)
+            List<Interfaces.IUserBillSummaryModel> userBillModels, IList<BAL.IRule> AllRules)
         {
             foreach (var employee in empListFromDB)
             {
