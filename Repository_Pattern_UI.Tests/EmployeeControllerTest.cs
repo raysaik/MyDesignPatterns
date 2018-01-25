@@ -46,5 +46,11 @@ namespace Repository_Pattern_UI.Tests
             ////Assert
             Assert.AreEqual("GetAllEmployeeBillDetails", result.ViewBag.Title);
         }
+
+        [Test]
+        public void Index_ViewReturn_Test()
+        {
+
+        }
     }
 }
