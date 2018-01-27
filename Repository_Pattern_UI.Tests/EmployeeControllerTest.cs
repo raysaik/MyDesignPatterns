@@ -48,9 +48,21 @@ namespace Repository_Pattern_UI.Tests
         }
 
         [Test]
-        public void Index_ViewReturn_Test()
+        public void Index_ModelProperty_Test()
         {
+            //Arrange
+            var billRepoForMock = MockRepository.GenerateStub<Repository.IBillRepository>();
+            billRepoForMock.Stub(m => m.GetAllEmployeeDesignations()).Return(new List<string>() { "Abcd", "efgh"});
+            billRepoForMock.Stub(m => m.GetAllEmployeeBillDetails()).Return(new List<IUserBillSummaryModel>());
+            var controller = new EmployeeController(billRepoForMock);
+           // var modelMock = MockRepository.GenerateStub<Abstract_ViewModel>();
+            
+            //Act
+            var result = controller.Index() as ViewResult;
+            var vmodel = result.Model as Abstract_ViewModel;
 
+            //Assert
+            Assert.That(vmodel.ListOfDesignations.Count() == 3);
         }
     }
 }
