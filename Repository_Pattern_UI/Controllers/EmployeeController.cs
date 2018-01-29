@@ -14,8 +14,6 @@ namespace Repository_Pattern_UI.Controllers
 {
     public class EmployeeController : Controller
     {
-        //private RepositoryPattern_DBEntities db = new RepositoryPattern_DBEntities();
-
         //
         // GET: /Employee/
         private Repository.IBillRepository billRepository;

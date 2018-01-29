@@ -24,6 +24,12 @@ namespace Repository_pattern_Repository
             su = new DAL.SqlDALUtilities();
             allRules = BAL.RuleHelpers.InitializeRuleEngine();
         }
+        
+        public BillRepository(DAL.ExcelUtilities eu,DAL.SqlDALUtilities su)
+        {
+            this.eu = eu;
+            this.su = su;
+        }
 
         public IList<Interfaces.IUserBillSummaryModel> GetAllEmployeeBillDetails()
         {
